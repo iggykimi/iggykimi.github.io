@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lumora — Privacy Policy</title>
+<style>
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:720px;margin:32px auto;padding:0 20px;color:#1a1a1a;line-height:1.6;font-size:15px}
+  h1{font-size:24px;margin-bottom:4px} h2{font-size:18px;margin:28px 0 8px;color:#2a2a6a}
+  .muted{color:#666;font-size:13px} ul{padding-left:20px} li{margin:4px 0}
+  a{color:#4a4ac0} code{background:#f2f2f8;padding:2px 6px;border-radius:4px;font-size:13px}
+</style>
+</head>
+<body>
+<h1>Lumora — Privacy Policy</h1>
+<p class="muted">Effective date: September 3, 2026 · Last updated: September 3, 2026</p>
+
+<p>Lumora is offline-first. Your puzzles, progress and settings stay on your device. We do not run our own servers and we do not create user accounts.</p>
+
+<h2>1. Data stored on your device</h2>
+<ul>
+  <li><strong>Game progress &amp; daily history</strong> — puzzles solved, board state, stars, hints used, solve times. Stored in <code>lumora.db</code> (Room). Used to restore your game, show stats and archive. Never transmitted by us.</li>
+  <li><strong>Settings &amp; streak</strong> — sound, haptics, contrast, motion, timer, reminder opt-in, streak counters. Stored in <code>settings.pb</code> and <code>streak.pb</code> (Proto DataStore). Local only.</li>
+  <li><strong>Daily reminder (opt-in)</strong> — if you enable “Daily reminder”, WorkManager schedules a local notification at 20:00. Requires <code>POST_NOTIFICATIONS</code> (Android 13+) and <code>RECEIVE_BOOT_COMPLETED</code> to re-schedule after reboot. No data leaves the device.</li>
+</ul>
+<p>Permissions used: <code>VIBRATE</code> (haptic feedback), plus the two above only when you opt in. No location, contacts, camera or microphone.</p>
+
+<h2>2. Advertising (AdMob) — only after consent</h2>
+<p>Lumora shows <strong>banner ads only in menus</strong> and one optional <strong>rewarded ad</strong> to reveal a hint (100% opt-in). No interstitial after every puzzle.</p>
+<ul>
+  <li>SDK: <strong>Google Mobile Ads (GMA)</strong> + <strong>User Messaging Platform (UMP)</strong> for consent.</li>
+  <li>Banners/interstitials/rewarded are loaded <em>only after</em> <code>ConsentGate.ensureThen</code> confirms <code>canRequestAds == true</code>. Before consent, no ad request is made.</li>
+  <li>In the EEA/UK, UMP shows a consent form when required; you can change your choice anytime in Settings → Privacy options (shown only where required).</li>
+  <li>AdMob may collect the <code>AD_ID</code> and device signals to serve ads per Google’s policies. Lumora does not add its own identifiers.</li>
+  <li>Remove ads forever with the one-time purchase <strong>Lumora Plus</strong> (Google Play Billing). When premium is active, no ad is requested at all (banner slot is 0 dp).</li>
+</ul>
+
+<h2>3. Purchases (Google Play Billing)</h2>
+<p>Lumora Plus is a one-time in-app purchase via <strong>Google Play Billing</strong>. Purchase verification and restoration are handled by Google Play. Lumora stores only a local <code>isPremium</code> flag; no payment data is stored by us.</p>
+
+<h2>4. Sharing — user-initiated only</h2>
+<p>The Share button creates an emoji grid of your result (no board solution) and opens the system share sheet. Nothing is shared automatically or sent to our servers; you choose the destination app each time.</p>
+
+<h2>5. Backups &amp; deletion</h2>
+<ul>
+  <li>Android Auto Backup / cloud backup includes only <code>lumora.db</code>, <code>settings.pb</code> and <code>streak.pb</code>. Volatile files (<code>ads.preferences_pb</code>, <code>zen_stats</code>, <code>ads_store.pb</code>, <code>live_session.pb</code>) are explicitly excluded.</li>
+  <li><strong>Delete all data:</strong> uninstall the app, or System Settings → Apps → Lumora → Storage → Clear data. Because data never left the device, deletion is complete.</li>
+</ul>
+
+<h2>6. Contact</h2>
+<p>Questions about this policy: <a href="mailto:privacy@zrano.dev">privacy@zrano.dev</a> — or open an issue in the app’s Play Store listing contact.</p>
+
+<h2>7. Changes</h2>
+<p>We will update this file and the date above when Lumora adds networking, analytics or new data types. The version in <code>assets/privacy.html</code> is the in-app source of truth.</p>
+
+<p class="muted">This short in-app policy is for transparency inside Settings → Credits → Privacy Policy. The Play Console Data Safety declaration (owner-maintained) is the store-facing disclosure.</p>
+</body>
+</html>
