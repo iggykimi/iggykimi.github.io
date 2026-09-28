@@ -1,1 +1,15 @@
-[{"_comment":"REPLACE AFTER FIRST PLAY UPLOAD: swap PLACEHOLDER-SHA256 with the SHA-256 fingerprint of the Play Signing app-signing certificate (Play Console > Test and release > Setup > App signing). Then re-deploy this file unchanged at https://iggykimi.github.io/lumora/.well-known/assetlinks.json.","relation":["delegate_permission/common.handle_all_urls"],"target":{"namespace":"android_app","package_name":"com.zrano.lumora","sha256_cert_fingerprints":["PLACEHOLDER-SHA256"]}}]
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.zrano.lumora",
+      "sha256_cert_fingerprints": [
+        "58:FE:BA:EA:90:68:2A:FC:9E:0F:B4:4F:85:FD:64:29:82:88:57:3E:E5:BB:C0:14:BB:C9:8E:38:3E:FA:B9:67",
+        "C0:C7:A0:3E:45:3B:93:DC:D1:F1:36:81:E8:D9:3C:D4:5D:DD:DA:60:83:25:A9:96:94:52:D9:D7:E2:F9:7B:05"
+      ]
+    }
+  }
+]
